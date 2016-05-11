@@ -9,11 +9,8 @@ class Arrow {
   float clickX;
   float clickY;
   int click;
-
-
-
+  
   Arrow() {
-
     x = 350;
     y = 100;  
     clickX = 0;
@@ -33,7 +30,6 @@ class Arrow {
   void move() {
     if (mousePressed && click == 0)
       click = 1;
-
     if (click == 1) {
       if (mouseX < 400)
         targetX = 400 - mouseX;
@@ -41,15 +37,10 @@ class Arrow {
         targetX = mouseX - 400;
 
       targetY = mouseY - 100;  
-
       z = sqrt((targetX * targetX) + (targetY * targetY));
-
       angle = cos((targetX)/z);
-
       speedX = (z * acos(angle))/20;
       speedY = (z * asin(angle))/20;
-
-
       if (mouseX < 400)
         x -= speedX;
       else
@@ -57,6 +48,7 @@ class Arrow {
 
       y += speedY;
     }
+    
     if (x <= 0 || y >= 600 || x >= 800 || y <= 0)
     {
       x =380;
@@ -64,8 +56,6 @@ class Arrow {
       click = 0;
     }
   }
-
-
 
   boolean hit(Swordsman enemy) {
     if (x > enemy.x && x < enemy.x + 100 && y > enemy.y && y < enemy.y + 100) {
