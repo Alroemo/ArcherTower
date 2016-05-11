@@ -16,12 +16,12 @@ class Swordsman {
     speed = 2;  
     int hp;
   }
+  
   void display() {
     pushMatrix();
     //shield
     fill(200);
     rect(x+10, y+30, 25, 40);
-
     noStroke();
     //main body
     //head
@@ -43,7 +43,6 @@ class Swordsman {
     ellipse(x+10, y+40, 10, 10);
     //horse
     noStroke();
-
     fill(255, 180, 100);
     //horse body
     rect(x-10, y+60, 60, 20, 25, 0, 25, 0);
@@ -66,14 +65,11 @@ class Swordsman {
     //knightleg
     fill(255, 0, 0);
     rect(x+10, y+55, 10, 20);
-
     //stick thing
     fill(180);
     rect(x+10, y+33, 80, 5);
     stroke(1);
     rect(x+10, y+30, 10, 20);
-
-
     //knight hole
     fill(0);
     noStroke();
@@ -83,12 +79,9 @@ class Swordsman {
     popMatrix();
   }
 
-
   void move(String direction) {
-
     speedX = speed * cos(radians(angle));
     speedY = speed * sin(radians(angle));
-
     if (x >= 0 && x <= 750) {
       if (direction == "forward") {
         x +=10 * speedX;
@@ -113,6 +106,7 @@ class Swordsman {
     } else
       return false;
   }
+  
   boolean hit() {
     if (keyPressed) {
       //if (key == 'SPACE') 
