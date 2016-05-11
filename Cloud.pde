@@ -9,11 +9,13 @@ class Cloud {
     height = 50;
     speed = (int)random(1,3);
   }
+  
   void display() {
     fill(240);
     noStroke();
     ellipse(x, y, width, height);
   }
+  
   void move() {
     x+= speed;
     if (x >= 800) {
