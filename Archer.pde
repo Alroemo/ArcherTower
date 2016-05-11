@@ -1,13 +1,10 @@
 class Archer {
   float x, y;
-
   float speed, speedX, speedY, rotSpeed;
   float angle;
   float targetAngle;
   float easing = 0.1;
   float r, g, b;
-
-
   int hp;
   int click;
   Arrow arrow;
@@ -24,20 +21,16 @@ class Archer {
   }
 
   void display() {
-
     g = 0;
     b =0;
-
+    
     drawTower();
-
     pushMatrix();
-    translate( 400, 100 );
+    translate( 400, 100);
     rotate(targetAngle);
     stroke(155,155,90);
     line(x, y, 150, 0);
-
     popMatrix();
-
     arrow.display();
   }
 
@@ -52,7 +45,6 @@ class Archer {
   }
 
   void shoot() {
-
     if (mousePressed && click == 0) {
       click++;
     }
