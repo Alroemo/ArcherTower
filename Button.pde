@@ -2,6 +2,7 @@ class Button {
   int x, y, width, height;
   String text;
   boolean pressed;
+  
   Button(int _x, int _y, int _width, int _height, String _text) {
     x = _x;
     y = _y;
@@ -10,6 +11,7 @@ class Button {
     text = _text;
     pressed = false;
   }
+  
   void draw() {
     noStroke();
     fill(150);
@@ -21,6 +23,7 @@ class Button {
     fill(0);
     text(text, x+(width/2 - 10), y+(height/2));
   }
+  
   boolean pressed() {
     if ((mouseX > x) & (mouseX <= (x+width)) & (mouseY > y) & (mouseY <= (y+height)) && mousePressed) {
       return true;
