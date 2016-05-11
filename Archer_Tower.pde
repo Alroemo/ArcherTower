@@ -49,7 +49,7 @@ void draw() {
       play = true;
   }//end of menu page
 
-    //draws the end game screen
+  //draws the end game screen
   if (gameEnd) {
     drawBackground();
     archer.drawTower();
